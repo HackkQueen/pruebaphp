@@ -8,30 +8,30 @@
             $this->_DATA =(file_get_contents('php://input')=="") ? ["Mensaje"=>"Envien datos"] : json_decode(file_get_contents('php://input',true));
         }
         public function getAll(){
-            $res = $this->con->prepare("SELECT * FROM ciudad");
+            $res = $this->con->prepare("SELECT * FROM departamento");
             $res->execute();
             echo json_encode($res->fetchAll(\PDO::FETCH_ASSOC));
         }
         public function postAll() {
-            $res = $this->con->prepare("INSERT INTO ciudad(IdCiudad, NombreCiudad, Region) VALUES(:id, :nomCiudad, :region)");
+            $res = $this->con->prepare("INSERT INTO departamento(idDep, nombreDep, idPais) VALUES(:id, :nomDep, :idPais)");
             $res->bindParam(':id', $this->_DATA->id);
-            $res->bindParam(':nomCiudad', $this->_DATA->nomCiudad);
-            $res->bindParam(':region', $this->_DATA->region);
+            $res->bindParam(':nomDep', $this->_DATA->nomDep);
+            $res->bindParam(':idPais', $this->_DATA->idPais);
             $res->execute();
             print_r($res->rowCount());
         }
         public function putAll(){
-            $res = $this->con->prepare("UPDATE ciudad SET NombreCiudad = :nomCiudad, Region = :region WHERE IdCiudad = :id");
+            $res = $this->con->prepare("UPDATE departamento SET nombreDep = :nomDep, idPais = :idPais WHERE idDep = :id");
             $res->bindParam(':id', $this->_DATA->id);
-            $res->bindParam(':nomCiudad', $this->_DATA->nomCiudad);
-            $res->bindParam(':region', $this->_DATA->region);
+            $res->bindParam(':nomDep', $this->_DATA->nomDep);
+            $res->bindParam(':idPais', $this->_DATA->idPais);
             $res->execute();
             print_r($res->rowCount());
         }
         public function deleteAll(){
             $cox = new \App\connect();
             $_DATA = json_decode(file_get_contents("php://input"));
-            $res = $cox->con->prepare("DELETE FROM ciudad WHERE IdCiudad=:id");
+            $res = $cox->con->prepare("DELETE FROM departamento WHERE idDep=:id");
             $res->bindParam(':id', $_DATA->id);
             $res->execute();
             print_r($res->rowCount());
