@@ -1,4 +1,5 @@
 <?php
+    //se realiza conexion con TODAS las carpetas de CRUD para poder realizar las funciones de cada una
     header("Access-Control-Allow-Origin: *");
     require "../vendor/autoload.php";
     $dotenv = Dotenv\Dotenv::createImmutable("../")->load();
