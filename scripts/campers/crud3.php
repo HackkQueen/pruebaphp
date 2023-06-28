@@ -8,33 +8,35 @@
             $this->_DATA =(file_get_contents('php://input')=="") ? ["Mensaje"=>"Envien datos"] : json_decode(file_get_contents('php://input',true));
         }
         public function getAll(){
-            $res = $this->con->prepare("SELECT * FROM examenes");
+            $res = $this->con->prepare("SELECT * FROM campers");
             $res->execute();
             echo json_encode($res->fetchAll(\PDO::FETCH_ASSOC));
         }
         public function postAll() {
-            $res = $this->con->prepare("INSERT INTO examenes(Codigo, NombreExamenes, Costo, IdBacteriologo) VALUES(:cd, :nomExamenes, :cost, :idBact)");
-            $res->bindParam(':cd', $this->_DATA->cd);
-            $res->bindParam(':nomExamenes', $this->_DATA->nomExamenes);
-            $res->bindParam(':cost', $this->_DATA->cost);
-            $res->bindParam(':idBact', $this->_DATA->idBact);
+            $res = $this->con->prepare("INSERT INTO campers(idCamper, nombreCamper, apellidoCamper, fechaNac, idReg) VALUES(:id, :nomCamper, :apCamper, :data, :idReg)");
+            $res->bindParam(':id', $this->_DATA->id);
+            $res->bindParam(':nomCamper', $this->_DATA->nomCamper);
+            $res->bindParam(':apCamper', $this->_DATA->apCamper);
+            $res->bindParam(':data', $this->_DATA->data);
+            $res->bindParam(':idReg', $this->_DATA->idReg);
             $res->execute();
             print_r($res->rowCount());
         }
         public function putAll(){
-            $res = $this->con->prepare("UPDATE examenes SET NombreExamenes = :nomExamenes, Costo = :cost, IdBacteriologo = :idBact WHERE Codigo = :cd");
-            $res->bindParam(':cd', $this->_DATA->cd);
-            $res->bindParam(':nomExamenes', $this->_DATA->nomExamenes);
-            $res->bindParam(':cost', $this->_DATA->cost);
-            $res->bindParam(':idBact', $this->_DATA->idBact);
+            $res = $this->con->prepare("UPDATE campers SET nombreCamper = :nomCamper, apellidoCamper = :apCamper, fechaNac = :data, idReg =:idReg WHERE idCamper = :id");
+            $res->bindParam(':id', $this->_DATA->id);
+            $res->bindParam(':nomCamper', $this->_DATA->nomCamper);
+            $res->bindParam(':apCamper', $this->_DATA->apCamper);
+            $res->bindParam(':data', $this->_DATA->data);
+            $res->bindParam(':idReg', $this->_DATA->idReg);
             $res->execute();
             print_r($res->rowCount());
         }
         public function deleteAll(){
             $cox = new \App\connect();
             $_DATA = json_decode(file_get_contents("php://input"));
-            $res = $cox->con->prepare("DELETE FROM examenes WHERE Codigo=:cd");
-            $res->bindParam(':cd', $_DATA->cd);
+            $res = $cox->con->prepare("DELETE FROM campers WHERE idCamper=:id");
+            $res->bindParam(':id', $_DATA->id);
             $res->execute();
             print_r($res->rowCount());
         }
