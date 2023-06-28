@@ -1,0 +1,30 @@
+{
+    "name": "mafe/practica",
+    "authors": [
+        {
+            "name": "mariaCubides",
+            "email": "mcubides1@udi.edu.co"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":[
+                "./scripts/db",
+                "./scripts/eps",
+                "./scripts/bacteriologo",
+                "./scripts/ciudad",
+                "./scripts/examenes",
+                "./scripts/examenes_reactivos",
+                "./scripts/ordenes",
+                "./scripts/paciente",
+                "./scripts/proveedor",
+                "./scripts/reactivos",
+                "./scripts/reactivos_proveedor"
+            ]
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "bramus/router": "~1.6"
+    }
+}
