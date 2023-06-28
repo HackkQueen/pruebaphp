@@ -65,16 +65,10 @@ class ComposerStaticInite101de6f834550240ad4b9548bb55b04
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/scripts/db',
-            1 => __DIR__ . '/../..' . '/scripts/eps',
-            2 => __DIR__ . '/../..' . '/scripts/bacteriologo',
-            3 => __DIR__ . '/../..' . '/scripts/ciudad',
-            4 => __DIR__ . '/../..' . '/scripts/examenes',
-            5 => __DIR__ . '/../..' . '/scripts/examenes_reactivos',
-            6 => __DIR__ . '/../..' . '/scripts/ordenes',
-            7 => __DIR__ . '/../..' . '/scripts/paciente',
-            8 => __DIR__ . '/../..' . '/scripts/proveedor',
-            9 => __DIR__ . '/../..' . '/scripts/reactivos',
-            10 => __DIR__ . '/../..' . '/scripts/reactivos_proveedor',
+            1 => __DIR__ . '/../..' . '/scripts/campers',
+            2 => __DIR__ . '/../..' . '/scripts/departamento',
+            3 => __DIR__ . '/../..' . '/scripts/pais',
+            4 => __DIR__ . '/../..' . '/scripts/region',
         ),
     );
 

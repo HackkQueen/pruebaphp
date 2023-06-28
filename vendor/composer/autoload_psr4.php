@@ -12,5 +12,5 @@ return array(
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
-    'App\\' => array($baseDir . '/scripts/db', $baseDir . '/scripts/eps', $baseDir . '/scripts/bacteriologo', $baseDir . '/scripts/ciudad', $baseDir . '/scripts/examenes', $baseDir . '/scripts/examenes_reactivos', $baseDir . '/scripts/ordenes', $baseDir . '/scripts/paciente', $baseDir . '/scripts/proveedor', $baseDir . '/scripts/reactivos', $baseDir . '/scripts/reactivos_proveedor'),
+    'App\\' => array($baseDir . '/scripts/db', $baseDir . '/scripts/campers', $baseDir . '/scripts/departamento', $baseDir . '/scripts/pais', $baseDir . '/scripts/region'),
 );

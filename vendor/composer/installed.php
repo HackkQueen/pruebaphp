@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'mafe/practica',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'd4a984ff59d808b3a72c38a5b9b5637e5200f8cb',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'mafe/practica' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'd4a984ff59d808b3a72c38a5b9b5637e5200f8cb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
